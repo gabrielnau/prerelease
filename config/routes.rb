@@ -1,5 +1,7 @@
 Prerelease::Application.routes.draw do
   
+  namespace :admin do resources :promos end
+
   get "home/index"
 
   root :to => "home#index"

@@ -1,0 +1,29 @@
+%h1 Listing admin_promos
+
+%table
+  %tr
+    %th Name
+    %th Release date
+    %th Release number
+    %th Artist
+    %th Release title
+    %th Content
+    %th
+    %th
+    %th
+
+  - @admin_promos.each do |admin_promo|
+    %tr
+      %td= admin_promo.name
+      %td= admin_promo.release_date
+      %td= admin_promo.release_number
+      %td= admin_promo.artist
+      %td= admin_promo.release_title
+      %td= admin_promo.content
+      %td= link_to 'Show', admin_promo
+      %td= link_to 'Edit', edit_admin_promo_path(admin_promo)
+      %td= link_to 'Destroy', admin_promo, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Promo', new_admin_promo_path

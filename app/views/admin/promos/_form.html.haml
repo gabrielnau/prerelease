@@ -1,0 +1,28 @@
+= form_for @admin_promo do |f|
+  -if @admin_promo.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@admin_promo.errors.count, "error")} prohibited this admin_promo from being saved:"
+      %ul
+        - @admin_promo.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :release_date
+    = f.date_select :release_date
+  .field
+    = f.label :release_number
+    = f.text_field :release_number
+  .field
+    = f.label :artist
+    = f.text_field :artist
+  .field
+    = f.label :release_title
+    = f.text_field :release_title
+  .field
+    = f.label :content
+    = f.text_area :content
+  .actions
+    = f.submit 'Save'
