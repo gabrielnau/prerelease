@@ -8,6 +8,8 @@ Prerelease::Application.routes.draw do
   
   devise_for :users
 
+  resources :labels
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
